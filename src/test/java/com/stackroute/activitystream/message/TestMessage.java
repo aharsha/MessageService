@@ -10,6 +10,9 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import com.stackroute.activitystream.dao.MessageDAO;
+import com.stackroute.activitystream.model.Message;
+
 
 public class TestMessage {
 	private static AnnotationConfigApplicationContext context;
@@ -40,31 +43,14 @@ public class TestMessage {
 		
 		
 		
-		assertEquals("success",true,messageDao.sendMessage("harsha@gmail.com",message));
+		assertEquals("success",true,messageDao.sendMessage(message));
 		
 		
 	}
 	
 	
 	
-//@Test
-		public void sendMessageToCircleTestCase()
-		{
-			Message message=new Message();
-			
-			message.setId((int)(Math.random()*100000));
-			message.setMessageContent("thinking same");
-			message.setMessageTime(new Date());
-			message.setMessageType("Text");
-			message.setRecieverCircleId(40159);
-			message.setSenderId("harsha@gmail.com");
-			
-			
-			
-			assertEquals("success",true,messageDao.sendMessageCircle(40159,message));
-			
-			
-		}
+
 	
 	
 	
